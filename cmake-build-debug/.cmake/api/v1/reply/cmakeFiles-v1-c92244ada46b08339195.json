@@ -125,8 +125,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/artem/CLionProjects/SMA/cmake-build-debug",
-		"source" : "/home/artem/CLionProjects/SMA"
+		"build" : "/home/artem/CLionProjects/SimpleMovingAverage/cmake-build-debug",
+		"source" : "/home/artem/CLionProjects/SimpleMovingAverage"
 	},
 	"version" : 
 	{

@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/artem/CLionProjects/SMA/cmake-build-debug"
+			"value" : "/home/artem/CLionProjects/SimpleMovingAverage/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -543,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/artem/CLionProjects/SMA/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/home/artem/CLionProjects/SimpleMovingAverage/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -603,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/artem/CLionProjects/SMA"
+			"value" : "/home/artem/CLionProjects/SimpleMovingAverage"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1135,7 +1135,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/artem/CLionProjects/SMA/cmake-build-debug"
+			"value" : "/home/artem/CLionProjects/SimpleMovingAverage/cmake-build-debug"
 		},
 		{
 			"name" : "SMA_IS_TOP_LEVEL",
@@ -1159,7 +1159,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/artem/CLionProjects/SMA"
+			"value" : "/home/artem/CLionProjects/SimpleMovingAverage"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
