@@ -5,19 +5,32 @@
 #include "SimpleMovingAverage.h"
 
 #define TICKS_NUM 1000000
+#define TICKS_TYPE double
+#define WINDOW_SIZE 8
+#define RANDOM_INPUT true
 
 using namespace std;
 using namespace chrono;
 int main() {
+    TICKS_TYPE value;
     srand(std::time(nullptr));
-    SimpleMovingAverage<float> filter(8);
+    SimpleMovingAverage<TICKS_TYPE> filter(WINDOW_SIZE);
 
     // Get starting timepoint
     auto start = high_resolution_clock::now();
 
-    for (int i = 0; i < TICKS_NUM; i++) {
-        double value = 1.0 + (std::rand() / (static_cast<double>(RAND_MAX) + 1.0)) * 100;
-        cout << "Random: " << value << " | filtered: " << filter.getFilteredValueSum(value) << endl;
+    if(RANDOM_INPUT){
+        for (int i = 0; i < TICKS_NUM; i++) {
+            value = 1.0 + (std::rand() / (static_cast<double>(RAND_MAX) + 1.0)) * 100;
+            cout << "Random: " << value << " | filtered: " << filter.getFilteredValue(value) << endl;
+        }
+    }
+    else{
+        for (int i = 0; i < TICKS_NUM; ++i) {
+            cout << "Enter tick(" << i << "/" << TICKS_NUM << "): ";
+            cin >> value;
+            cout << "Input: " << value << " | filtered: " << filter.getFilteredValue(value) << endl;
+        }
     }
 
     auto stop = high_resolution_clock::now();

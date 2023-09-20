@@ -7,19 +7,21 @@
 
 #include <deque>
 #include <numeric>
+#include <cmath>
 
 template <typename T>
 class SimpleMovingAverage {
 private:
     int windowSize;
     T prevSMA;
-    std::deque<T> buffer;
+    std::deque<T> buffer; //deque for O(1) push and pop
 public:
     SimpleMovingAverage(int windowSize_){
         windowSize = windowSize_;
-        buffer = std::deque<T>(windowSize_, 0);
+        buffer = std::deque<T>(windowSize_);
         prevSMA = 0;
     }
+    /*This method implements cheap formula with previos SMA*/
     T getFilteredValue(T newValue){
         T elements_sum = 0;
         T newSMA = 0;
@@ -27,11 +29,11 @@ public:
         this->buffer.pop_front();
         this->buffer.push_back(newValue);
 
-        if(this->buffer.size() < this->windowSize){
+        if(this->buffer.size() < this->windowSize){ //while buffer isn't accumulated, need to calc sum
             elements_sum = std::accumulate(this->buffer.begin(), this->buffer.end(), 0);
             newSMA = elements_sum / this->windowSize;
         }
-        else{
+        else{ //when buffer full, use cheap formula
             newSMA = this->prevSMA + (newValue - frontValue)/this->windowSize;
             this->prevSMA = newSMA;
         }
@@ -41,7 +43,7 @@ public:
     ~SimpleMovingAverage(){
 
     }
-
+    /*This method helps to compare perforamnce of cheap and direct calculate */
     T getFilteredValueSum(T newValue){
         T elements_sum = 0;
         T newSMA = 0;
