@@ -17,9 +17,10 @@
 
 # Сборка примера
 ```
-mkdir cmake-build-debug
-cmake --build cmake-build-debug/
-./cmake-build-debug/SMA # executable
+mkdir build
+cd build
+cmake ../ .
+make # executable
 ```
 
 # Анализ результатов
